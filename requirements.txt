@@ -1,4 +1,4 @@
-customtkinter==5.2.2
+customtkinter==6.0.0
 darkdetect==0.8.0
 packaging==26.2
 nuitka==4.1.3
