@@ -1,7 +1,7 @@
 {
-  "kofi_url": "",
-  "gcash_account_name": "",
-  "gcash_number": "",
-  "gcash_qr_image": "",
+  "kofi_url": "https://ko-fi.com/edwarddelacruz",
+  "gcash_account_name": "Codedev by Edward",
+  "gcash_number": "09703313912",
+  "gcash_qr_image": "Gcash_qr.jpg",
   "support_message": "Your support helps maintain Nuitka Studio, improve Linux and Windows builds, and keep future releases free to use."
 }
