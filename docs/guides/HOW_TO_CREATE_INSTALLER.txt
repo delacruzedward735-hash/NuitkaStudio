@@ -1,0 +1,17 @@
+HOW TO CREATE THE REAL INSTALLER
+
+1. Extract this ZIP completely.
+2. Open the extracted folder.
+3. Double-click: build_professional_installer.bat
+4. Approve the Windows administrator prompt if shown.
+5. The script automatically installs Inno Setup through winget when needed.
+6. Wait until it displays "SUCCESS - REAL INSTALLER CREATED".
+
+The finished installer will be:
+installer-output\NuitkaStudio-Setup-3.9.3.exe
+
+That is the file to upload to your website. It installs Nuitka Studio into:
+C:\Program Files\Nuitka Studio
+
+If the build closes or fails, run BUILD_INSTALLER_WITH_LOG.bat and send the
+created build-error.log file for diagnosis.

@@ -1,0 +1,93 @@
+name: Bug report
+description: Report a reproducible problem in Nuitka Studio
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Remove passwords, tokens, private keys, payment credentials, and other sensitive data before submitting.
+  - type: input
+    id: version
+    attributes:
+      label: Nuitka Studio version
+      placeholder: "3.9.3"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows 11
+        - Windows 10
+        - Linux Mint
+        - Ubuntu or Debian
+        - Kali or Parrot
+        - Other Linux
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python and Nuitka versions
+      description: Paste Python version and `python -m nuitka --version` output.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Startup or shutdown
+        - Build configuration
+        - Packages or resources
+        - App Identity
+        - Windows installer
+        - Debian package
+        - Cross Build
+        - Settings or history
+        - Scrolling or UI
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Click ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and log text
+      description: Copy text where possible instead of submitting only a screenshot.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Include project structure, build mode, output format, and screenshots when useful.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I searched existing issues for the same problem.
+          required: true
+        - label: I removed secrets and private information.
+          required: true
+        - label: This is not a confidential security vulnerability.
+          required: true

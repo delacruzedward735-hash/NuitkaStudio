@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use Nuitka Studio in a project or publication, please cite this software."
+title: "Nuitka Studio"
+type: software
+authors:
+  - family-names: "Dela Cruz"
+    given-names: "John Edward"
+version: "3.9.3"
+date-released: "2026-08-01"
+license: MIT
+repository-code: "https://github.com/delacruzedward735-hash/Nuitka-Studio"
+url: "https://myportfoliohub.online"
+abstract: "An open-source graphical frontend for compiling and packaging Python applications with Nuitka on Windows and Linux."
+keywords:
+  - Python
+  - Nuitka
+  - compiler
+  - packaging
+  - desktop application
+  - Windows
+  - Linux
