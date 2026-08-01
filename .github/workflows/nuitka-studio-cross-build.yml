@@ -28,6 +28,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: "requirements.txt"
 
       - name: Install project dependencies
         shell: bash
@@ -45,7 +47,7 @@ jobs:
         run: |
           python - <<'PY'
           import base64, json, shlex, subprocess, sys
-          args = json.loads(base64.b64decode("WyItLW1vZGU9b25lZmlsZSIsIi0tYXNzdW1lLXllcy1mb3ItZG93bmxvYWRzIiwiLS1yZW1vdmUtb3V0cHV0IiwiLS1qb2JzPS0yIiwiLS1vbmVmaWxlLW5vLWNvbXByZXNzaW9uIiwiLS13aW5kb3dzLWNvbnNvbGUtbW9kZT1kaXNhYmxlIiwiLS13aW5kb3dzLWljb24tZnJvbS1pY289bnVpdGthX2J1aWxkZXJfd29yay9hc3NldHMvbnVpdGthLXN0dWRpby5pY28iLCItLWVuYWJsZS1wbHVnaW49dGstaW50ZXIiLCItLWNvbXBhbnktbmFtZT1Db2RlZGV2IGJ5IEVkd2FyZCIsIi0tcHJvZHVjdC1uYW1lPU51aXRrYVN0dWRpby0zLjkuMSIsIi0tZmlsZS1kZXNjcmlwdGlvbj1CdWlsZCBhbmQgQ29tcGlsZSB5b3VyIG93biAgYXBwbGljYXRpb24iLCItLWZpbGUtdmVyc2lvbj0xLjAuMC4wIiwiLS1wcm9kdWN0LXZlcnNpb249MS4wLjAuMCIsIi0tY29weXJpZ2h0PUNvcHlyaWdodCDCqSAyMDI2IEpvaG4gRWR3YXJkIERlbGEgQ3J1ei4gQWxsIHJpZ2h0cyByZXNlcnZlZC4iLCItLW91dHB1dC1kaXI9YnVpbGQiLCItLW91dHB1dC1maWxlbmFtZT1OdWl0a2FTdHVkaW8tMy45LmV4ZSIsIm51aXRrYV9idWlsZGVyX3dvcmsvcnVuLnB5Il0=").decode("utf-8"))
+          args = json.loads(base64.b64decode("WyItLW1vZGU9b25lZmlsZSIsIi0tYXNzdW1lLXllcy1mb3ItZG93bmxvYWRzIiwiLS1yZW1vdmUtb3V0cHV0IiwiLS1qb2JzPS0yIiwiLS1vbmVmaWxlLW5vLWNvbXByZXNzaW9uIiwiLS13aW5kb3dzLWNvbnNvbGUtbW9kZT1kaXNhYmxlIiwiLS13aW5kb3dzLWljb24tZnJvbS1pY289YXNzZXRzL251aXRrYS1zdHVkaW8uaWNvIiwiLS1lbmFibGUtcGx1Z2luPXRrLWludGVyIiwiLS1jb21wYW55LW5hbWU9Q29kZWRldiBieSBFZHdhcmQiLCItLXByb2R1Y3QtbmFtZT1OdWl0a2FTdHVkaW8tMy45LjEiLCItLWZpbGUtZGVzY3JpcHRpb249QnVpbGQgYW5kIENvbXBpbGUgeW91ciBvd24gIGFwcGxpY2F0aW9uIiwiLS1maWxlLXZlcnNpb249MS4wLjAuMCIsIi0tcHJvZHVjdC12ZXJzaW9uPTEuMC4wLjAiLCItLWNvcHlyaWdodD1Db3B5cmlnaHQgwqkgMjAyNiBKb2huIEVkd2FyZCBEZWxhIENydXouIEFsbCByaWdodHMgcmVzZXJ2ZWQuIiwiLS1vdXRwdXQtZGlyPWJ1aWxkIiwiLS1vdXRwdXQtZmlsZW5hbWU9TnVpdGthU3R1ZGlvLTMuOS5leGUiLCJydW4ucHkiXQ==").decode("utf-8"))
           command = [sys.executable, "-m", "nuitka", *args]
           print("Running:", shlex.join(command))
           subprocess.run(command, check=True)
@@ -74,6 +76,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: "requirements.txt"
 
       - name: Install Linux build tools
         shell: bash
@@ -97,7 +101,7 @@ jobs:
         run: |
           python - <<'PY'
           import base64, json, shlex, subprocess, sys
-          args = json.loads(base64.b64decode("WyItLW1vZGU9b25lZmlsZSIsIi0tYXNzdW1lLXllcy1mb3ItZG93bmxvYWRzIiwiLS1yZW1vdmUtb3V0cHV0IiwiLS1qb2JzPS0yIiwiLS1vbmVmaWxlLW5vLWNvbXByZXNzaW9uIiwiLS1lbmFibGUtcGx1Z2luPXRrLWludGVyIiwiLS1vdXRwdXQtZGlyPWJ1aWxkIiwiLS1vdXRwdXQtZmlsZW5hbWU9TnVpdGthU3R1ZGlvLTMuOSIsIm51aXRrYV9idWlsZGVyX3dvcmsvcnVuLnB5Il0=").decode("utf-8"))
+          args = json.loads(base64.b64decode("WyItLW1vZGU9b25lZmlsZSIsIi0tYXNzdW1lLXllcy1mb3ItZG93bmxvYWRzIiwiLS1yZW1vdmUtb3V0cHV0IiwiLS1qb2JzPS0yIiwiLS1vbmVmaWxlLW5vLWNvbXByZXNzaW9uIiwiLS1lbmFibGUtcGx1Z2luPXRrLWludGVyIiwiLS1vdXRwdXQtZGlyPWJ1aWxkIiwiLS1vdXRwdXQtZmlsZW5hbWU9TnVpdGthU3R1ZGlvLTMuOSIsInJ1bi5weSJd").decode("utf-8"))
           command = [sys.executable, "-m", "nuitka", *args]
           print("Running:", shlex.join(command))
           subprocess.run(command, check=True)
