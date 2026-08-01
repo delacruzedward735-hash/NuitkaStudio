@@ -84,7 +84,7 @@ from .runtime import (
 
 
 APP_NAME = "Nuitka Studio"
-APP_VERSION = "3.9.3"
+APP_VERSION = "3.9.4"
 CREATOR_NAME = "John Edward Dela Cruz"
 PORTFOLIO_URL = "https://myportfoliohub.online"
 DONATION_DEFAULTS = {
@@ -2328,8 +2328,18 @@ class NuitkaStudioApp(ctk.CTk):
         return "exe"
 
     def _text_lines_or_cached(self, attribute: str, cached: list[str]) -> list[str]:
-        """Read a lazily-created textbox or its preloaded settings value."""
-        widget = getattr(self, attribute, None)
+        """Read a lazily-created textbox or its preloaded settings value.
+
+        Tkinter implements ``__getattr__`` by delegating unknown attributes to
+        the underlying Tcl interpreter. During lazy page creation (and in
+        headless tests built with ``object.__new__``), using ``getattr`` for a
+        widget that does not exist can recursively look up ``self.tk`` until
+        Python raises ``RecursionError``. These text widgets are normal
+        instance attributes, so read ``__dict__`` directly and avoid
+        Tkinter's attribute fallback entirely.
+        """
+        instance_attributes = object.__getattribute__(self, "__dict__")
+        widget = instance_attributes.get(attribute)
         if widget is None:
             return list(cached)
         return clean_lines(widget.get("1.0", "end"))
