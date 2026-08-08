@@ -54,7 +54,7 @@ jobs:
           PY
 
       - name: Upload Windows artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: NuitkaStudio-3.9.1-windows
           path: |
@@ -114,7 +114,7 @@ jobs:
           tar --exclude='*.build' --exclude='*.onefile-build' -czf "release/NuitkaStudio-3.9.1-linux.tar.gz" -C build .
 
       - name: Upload Linux artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: NuitkaStudio-3.9.1-linux
           path: release/NuitkaStudio-3.9.1-linux.tar.gz
