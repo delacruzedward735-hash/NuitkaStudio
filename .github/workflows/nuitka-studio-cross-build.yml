@@ -22,10 +22,10 @@ jobs:
     timeout-minutes: 120
     steps:
       - name: Check out project
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: "pip"
@@ -54,7 +54,7 @@ jobs:
           PY
 
       - name: Upload Windows artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: NuitkaStudio-3.9.1-windows
           path: |
@@ -70,10 +70,10 @@ jobs:
     timeout-minutes: 120
     steps:
       - name: Check out project
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: "pip"
@@ -114,7 +114,7 @@ jobs:
           tar --exclude='*.build' --exclude='*.onefile-build' -czf "release/NuitkaStudio-3.9.1-linux.tar.gz" -C build .
 
       - name: Upload Linux artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: NuitkaStudio-3.9.1-linux
           path: release/NuitkaStudio-3.9.1-linux.tar.gz
